@@ -1,0 +1,81 @@
+
+.menu-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  .menu-bar a
+  .menu-open p{
+    /* color: #000; */
+    cursor: pointer;
+  }
+  .menu-close p{
+    /* color: #000; */
+    cursor: pointer;
+  }
+  .menu-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    padding: 2em;
+    z-index: 2;
+    display: flex;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+  
+  .menu-close-btn p{
+    font-size: 100px;
+    
+    line-height: 70%;
+  }
+  .menu-close-btn{
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    
+  }
+  .menu-copy {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2em;
+  }
+  
+  
+  .menu-link-item{
+    width: max-content;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .menu-link-item-holder{
+    position: relative;
+  }
+  .menu-link-item-holder a{
+    /* color: #000; */
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.03em;
+  }
+  .menu-info{
+    display: flex;
+  }
+  .menu-info-col{
+  position: absolute;
+  bottom: -70%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
