@@ -179,7 +179,7 @@ export function Footer() {
                             
                         </div>
                         <div className="social absolute bottom-[55%] rotate-90  right-[5%] flex gap-10 ml-5 mt-5 ">  
-                               <a href="https://www.linkedin.com/in/adnan-dani-b6b7501b4/" target="_blank" rel="noreferrer"> 
+                               <a href="http://www.linkedin.com/in/jas-mine-272a58272/" target="_blank" rel="noreferrer"> 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6 " stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-linkedin  ">
                                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path> 
                                              <rect x="2" y="9" width="4" height="12"></rect>
