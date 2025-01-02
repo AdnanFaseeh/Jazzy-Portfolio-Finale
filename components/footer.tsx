@@ -188,10 +188,11 @@ export function Footer() {
                                  </a>     
                                  
                                  <a href="https://www.fiverr.com/s/BRXQRZl" target="_blank" rel="noreferrer"> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1dbf73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-fiverr">
-    <circle cx="12" cy="12" r="10" fill="#1dbf73"></circle>
-    <text x="12" y="16" font-size="8" font-family="Arial, sans-serif" fill="#ffffff" text-anchor="middle" alignment-baseline="middle" font-weight="bold">F</text>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-fiverr">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9 12h6m-6 3h6m-3-6v6" stroke-linecap="round"></path>
 </svg>
+
 
                                 </a>  
                                 <a href="https://www.instagram.com/adnan_dani/" target="_blank" rel="noreferrer">     
