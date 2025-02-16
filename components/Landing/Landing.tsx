@@ -58,7 +58,7 @@ export default function Home() {
         </div>
       </div>
       <div data-scroll data-scroll-speed={0.1} className="absolute top-[48%] left-[70%] gradient-text text-2xl font-light">
-        <p className="m-0">Web development</p>
+        <p className="m-0">Freelance</p>
         <p className="m-0">Web development Expert</p>
       </div>
       <div className="flex flex-col gap-2 gradient-text absolute right-[70%] top-[48%]">
