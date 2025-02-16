@@ -64,7 +64,7 @@ const Menu: React.FC = () => {
         <div className="menu-overlay-bar">
           <div className="menu-logo">
             <Link className="absolute top-5 text-3xl gradient-text" href="/">
-              Jazzy@
+              D@ni
             </Link>
           </div>
           <div className="menu-close gradient-text" onClick={toggleMenu}>
