@@ -33,8 +33,8 @@ export default function Description() {
           variants={opacity}
           animate={isInView ? 'open' : 'closed'}
         >
-          The combination of my passion for animation, design & interaction
-          positions me in a unique place in the Animation world.
+          The combination of my passion for Coding, design & interaction
+          positions me in a unique place in the Coding world.
         </motion.p>
         <div data-scroll data-scroll-speed={0.1}>
           <Rounded className="absolute top-[80%] left-[calc(100%-200px)] w-44 h-44 rounded-full bg-blue-500 flex items-center justify-center cursor-pointer">
