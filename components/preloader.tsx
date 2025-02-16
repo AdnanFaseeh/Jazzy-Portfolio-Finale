@@ -157,7 +157,7 @@ export function Preloader({
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         transition={{ delay: 2 }}
-        className="gradient-text absolute text-black text-[6rem] top-[30%] left-[45%]"
+        className="gradient-text absolute text-black text-[6rem] top-[30%] left-[43%]"
       >
         D@ni
       </motion.h1>
