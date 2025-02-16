@@ -159,7 +159,7 @@ export function Preloader({
         transition={{ delay: 2 }}
         className="gradient-text absolute text-black text-[6rem] top-[30%] left-[40%]"
       >
-        Jazzy@
+        D@ni
       </motion.h1>
       <motion.button
         aria-label={buttonText}
