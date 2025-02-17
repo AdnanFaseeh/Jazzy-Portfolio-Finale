@@ -171,7 +171,7 @@ export function Footer() {
                         </div>
                         <div className="nav flex gap-5 mb-24 ml-48 mr-48">
                             <Rounded>
-                                <p className="gradient-text">jasmineanimator576@gmail.com</p>
+                                <p className="gradient-text">danie274@gmail.com</p>
                             </Rounded>
                             <Rounded>
                                 <p className="gradient-text">+92 03176827836</p>
