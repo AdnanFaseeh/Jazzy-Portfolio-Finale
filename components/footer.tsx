@@ -165,8 +165,8 @@ export function Footer() {
                 <motion.div className="contact">
                     <div className="body">
                         <div className="title ">
-                            <h2 className="gradient-text mr-[70%] ">Hey! I'm ready </h2>
-                            <h2 className="gradient-text mb-10 mr-[700%] ">to consult you </h2>
+                            <h2 className="gradient-text ml-[-79%] ">Hey! I'm ready </h2>
+                            <h2 className="gradient-text mb-10 ml-[79%] ">to consult you </h2>
                             <ContactForm />
                         </div>
                         <div className="nav flex gap-5 mb-24 ml-48 mr-48">
