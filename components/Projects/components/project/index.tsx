@@ -18,7 +18,7 @@ export default function Index({ index, title, manageModal }: ProjectProps) {
         {title}
       </h2>
       <p className="font-light transition-all duration-400 hover:translate-x-[10px]">
-        Animation & Work
+        Freelance Work
       </p>
     </div>
   );
