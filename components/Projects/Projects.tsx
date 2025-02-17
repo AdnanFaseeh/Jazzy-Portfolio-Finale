@@ -15,7 +15,7 @@ interface ProjectData {
 const projects: ProjectData[] = [
   {
     title: "crypko",
-    src: "Capture4.PNG",
+    src: "https://dribbble.com/shots/22875945-Podcasts-Platform-UI?utm_source=Clipboard_Shot&utm_campaign=awsmd&utm_content=Podcasts%20Platform%20UI&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=awsmd&utm_content=Podcasts%20Platform%20UI&utm_medium=Social_Share",
     color: "#000000",
   },
   {
