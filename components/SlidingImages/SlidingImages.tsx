@@ -1,175 +1,71 @@
-'use client';
-import { useState, useEffect, useRef } from 'react';
-import Project from './components/project/index';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
+import { useRef } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
-import Rounded from '../common/RoundedButton';
 
-interface ProjectData {
-  title: string;
-  src: string;
-  color: string;
-}
+const slider1 = [
+    {
+        color: "#e3e5e7",
+        src: "c2.jpg"
+    },
+    {
+        color: "#d6d7dc",
+        src: "decimal.jpg"
+    },
+    {
+        color: "#e3e3e3",
+        src: "funny.jpg"
+    },
+    {
+        color: "#21242b",
+        src: "google.jpg"
+    }
+]
 
-const projects: ProjectData[] = [
-  {
-    title: "crypko",
-    src: "Capture4.PNG",
-    color: "#000000",
-  },
-  {
-    title: "Baghban Project",
-    src: "Capture3.PNG",
-    color: "#8C8C8C",
-  },
-  {
-    title: "amaeya",
-    src: "Capture2.PNG",
-    color: "#EFE8D3",
-  },
-  {
-    title: "Silencio",
-    src: "Capture.PNG",
-    color: "#706D63",
-  },
-];
+const slider2 = [
+    {
+        color: "#d4e3ec",
+        src: "maven.jpg"
+    },
+    {
+        color: "#e5e0e1",
+        src: "panda.jpg"
+    },
+    {
+        color: "#d7d4cf",
+        src: "powell.jpg"
+    },
+    {
+        color: "#e1dad6",
+        src: "wix.jpg"
+    }
+]
 
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: {
-    scale: 1,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    scale: 0,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-  },
-};
+export default function Index() {
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ["start end", "end start"]
+    })
 
-interface ModalState {
-  active: boolean;
-  index: number;
-}
+    const x1 = useTransform(scrollYProgress, [0, 1], [0, 150])
+    const x2 = useTransform(scrollYProgress, [0, 1], [0, -150])
+    const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
 
-export default function Home() {
-  const [modal, setModal] = useState<ModalState>({ active: false, index: 0 });
-  const { active, index } = modal;
-  const modalContainer = useRef<HTMLDivElement>(null);
-  const cursor = useRef<HTMLDivElement>(null);
-  const cursorLabel = useRef<HTMLDivElement>(null);
-
-  // Fixing the type of the quickSetter functions
-  let xMoveContainer = useRef<((value: number) => void) | null>(null);
-  let yMoveContainer = useRef<((value: number) => void) | null>(null);
-  let xMoveCursor = useRef<((value: number) => void) | null>(null);
-  let yMoveCursor = useRef<((value: number) => void) | null>(null);
-  let xMoveCursorLabel = useRef<((value: number) => void) | null>(null);
-  let yMoveCursorLabel = useRef<((value: number) => void) | null>(null);
-
-  useEffect(() => {
-    if (!modalContainer.current || !cursor.current || !cursorLabel.current) return;
-
-    // Move Container
-    xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", {
-      duration: 0.8,
-      ease: "power3",
-    });
-    yMoveContainer.current = gsap.quickTo(modalContainer.current, "top", {
-      duration: 0.8,
-      ease: "power3",
-    });
-
-    // Move Cursor
-    xMoveCursor.current = gsap.quickTo(cursor.current, "left", {
-      duration: 0.5,
-      ease: "power3",
-    });
-    yMoveCursor.current = gsap.quickTo(cursor.current, "top", {
-      duration: 0.5,
-      ease: "power3",
-    });
-
-    // Move Cursor Label
-    xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", {
-      duration: 0.45,
-      ease: "power3",
-    });
-    yMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "top", {
-      duration: 0.45,
-      ease: "power3",
-    });
-  }, []);
-
-  const moveItems = (x: number, y: number) => {
-    xMoveContainer.current?.(x);
-    yMoveContainer.current?.(y);
-    xMoveCursor.current?.(x);
-    yMoveCursor.current?.(y);
-    xMoveCursorLabel.current?.(x);
-    yMoveCursorLabel.current?.(y);
-  };
-
-  const manageModal = (active: boolean, index: number, x: number, y: number) => {
-    moveItems(x, y);
-    setModal({ active, index });
-  };
-
-  return (
-    <main onMouseMove={(e) => moveItems(e.clientX, e.clientY)} className="flex flex-col items-center pt-[300px] px-[200px]">
-      <div className="max-w-[1400px] w-full flex flex-col items-center justify-center mb-[100px]">
-        {projects.map((project, index) => (
-          <Project index={index} title={project.title} manageModal={manageModal} key={index} />
-        ))}
-      </div>
-      <Rounded>
-        <p className="gradient-text">More work</p>
-      </Rounded>
-
-      <motion.div
-        ref={modalContainer}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-        className="fixed top-[50%] left-[50%] w-[400px] h-[350px] bg-white pointer-events-none overflow-hidden z-[3]"
-      >
-        <div style={{ top: `${index * -100}%` }} className="relative w-full h-full transition-all duration-[0.5s] cubic-bezier(0.76, 0, 0.24, 1)">
-          {projects.map((project, index) => {
-            const { src, color } = project;
-            return (
-              <div
-                className="w-full h-full flex items-center justify-center"
-                style={{ backgroundColor: color }}
-                key={`modal_${index}`}
-              >
-                <Image src={`/images/${src}`} width={300} height={0} alt="image" />
-              </div>
-            );
-          })}
+    return (
+        <div ref={container} className="flex flex-col gap-[2vw] relative mt-[200px] bg-white z-[1]">
+            <motion.div style={{ x: x1 }} className="flex relative gap-[3vw] w-[120vw] left-[-10vw]">
+                <div className="w-full flex justify-center">
+                    <p className="text-[11vw] ml-14 gradient-text">Freelance D@ni -</p>
+                </div>
+            </motion.div>
+            <motion.div style={{ x: x2 }} className="flex relative gap-[3vw] w-[120vw] left-[-10vw]">
+                <div className="w-full flex justify-center">
+                    <p className="stroke-txt text-[11vw] gradient-text">Freelance D@ni -</p>
+                </div>
+            </motion.div>
+            <motion.div style={{ height }} className="relative mt-[100px]">
+                <div className="h-[1550%] w-[120%] left-[-10%] rounded-[50%] bg-white z-[1] absolute shadow-[0px_60px_50px_rgba(0,0,0,0.214)]"></div>
+            </motion.div>
         </div>
-      </motion.div>
-
-      <motion.div
-        ref={cursor}
-        className="w-[80px] h-[80px] rounded-full bg-[#455CE9] text-white fixed z-[3] flex items-center justify-center font-light text-[14px] pointer-events-none"
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-      ></motion.div>
-
-      <motion.div
-        ref={cursorLabel}
-        className="w-[80px] h-[80px] rounded-full bg-transparent text-white fixed z-[3] flex items-center justify-center font-light text-[14px] pointer-events-none"
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-      >
-        View
-      </motion.div>
-    </main>
-  );
+    )
 }
