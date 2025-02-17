@@ -14,23 +14,23 @@ interface ProjectData {
 
 const projects: ProjectData[] = [
   {
-    title: "Excell work",
-    src: "excell.jpeg",
+    title: "crypko",
+    src: "Capture4.PNG",
     color: "#000000",
   },
   {
-    title: "Office Studio animation",
-    src: "animation2.jpeg",
+    title: "Baghban Project",
+    src: "Capture3.PNG",
     color: "#8C8C8C",
   },
   {
-    title: "Company Ad animation",
-    src: "animation.jpeg",
+    title: "amaeya",
+    src: "Capture2.PNG",
     color: "#EFE8D3",
   },
   {
-    title: "Silencio animation",
-    src: "animation.jpeg",
+    title: "Silencio",
+    src: "Capture.PNG",
     color: "#706D63",
   },
 ];
