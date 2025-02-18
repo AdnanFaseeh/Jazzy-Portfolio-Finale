@@ -51,7 +51,7 @@ export const TrailEffect = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-screen bg-transparent z-40  overflow-hidden cursor-none"
+      className="relative w-full h-screen bg-transparent z-0  overflow-hidden cursor-none"
     >
       {circles.map((_, index) => (
         <div
